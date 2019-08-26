@@ -29,3 +29,4 @@ async def on_voice_state_update(member, before, after):
             await before.channel.delete()
     
 token = os.environ.get('BOT_TOKEN')
+Client.run(str(token))
