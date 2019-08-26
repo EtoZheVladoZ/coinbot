@@ -5,6 +5,11 @@ import os
 Client = commands.Bot(command_prefix='/')
 
 @Client.event
+async def on_ready():
+    await Client.change_presence(activity = discord.Game(name = 'created by VladoZ'))
+    print('Bot is online')
+
+@Client.event
 async def on_member_join(member):
     members_number = member.guild.get_channel(615540774620102708)
     await members_number.edit(name = f"Учасников: {str(member.guild.member_count)}")
