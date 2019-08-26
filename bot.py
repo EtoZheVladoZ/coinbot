@@ -27,4 +27,4 @@ async def on_voice_state_update(member, before, after):
         if before.channel.name == cname:
             await before.channel.delete()
     
-Client.run("NjAzMzAxOTcxMDA0MjI3NTg1.XTdayQ.QrmMk09fYiBFzGQpjhRUtQG_xwY")
+token = os.environ.get('BOT_TOKEN')
