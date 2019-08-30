@@ -27,8 +27,8 @@ async def on_voice_state_update(member, before, after):
         await  member.guild.create_voice_channel(name = cname, user_limit = 2, category = after.channel.category)
         channel = discord.utils.get(member.guild.voice_channels, name = cname)
         await member.move_to(channel)
-        overwrite = discord.PermissionOverwrite(manage_channels = True)
-        await channel.set_permissions(member, overwrite = overwrite)
+        #overwrite = discord.PermissionOverwrite(manage_channels = True)
+        #await channel.set_permissions(member, overwrite = overwrite)
     if before.channel is not None:
         if before.channel.name == cname:
             await before.channel.delete()
