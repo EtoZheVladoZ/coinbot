@@ -104,10 +104,10 @@ async def on_voice_state_update(member, before, after):
         for line in f:
             key, value = line.split()
             d[key] = int(value)
-    if after.channel != None and after.self_mute == False and before.self_mute == False:
+    if after.channel != None and after.self_mute == False and before.self_mute == False and after.channel.id != '641911705860964353':
         global time1
         time1 = time.time()
-    if after.channel == None:
+    if after.channel == None and before.channel.id != '641911705860964353':
         if str(member.id) in d:
             time2 = time.time()
             t = int((time2 - time1)/60)
