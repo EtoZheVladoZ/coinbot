@@ -42,11 +42,13 @@ async def balance(ctx, * member: discord.User):
 @Client.command()
 async def shop(ctx, value=None, * role: discord.Role):
     shop = {
-        '642105707763728405': 600
+        '642105707763728405': 600,
+        '650386057098952735': 1200
         }
     channel = ctx.message.channel
     emb = discord.Embed(title="Магазин", colour=0x2ecc71)
     emb.add_field(name="**Крутячок**", value='**Цена**: 600 коинов\n`!shop buy 642105707763728405`', inline=False)
+    emb.add_field(name="**Кроль**", value='**Цена**: 1200 коинов\n`!shop buy 650386057098952735`', inline=False)
     if value == None:
         await ctx.channel.send(embed=emb)
     if value == 'buy':
