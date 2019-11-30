@@ -25,7 +25,7 @@ async def balance(ctx, * member: discord.User):
             emb.add_field(name="Баланс:", value=f"{d[str(ctx.message.author.id)]}")
             await channel.send(embed=emb)
         else:
-            emb = discord.Embed(title=f"{ctx.message.author.name}", colour=0x2ecc71, icon_url=f"{message.author.avatar_url}")
+            emb = discord.Embed(title=f"{ctx.message.author.name}", colour=0x2ecc71, icon_url=f"{ctx.message.author.avatar_url}")
             emb.add_field(name="Баланс:", value="0")
             await channel.send(embed=emb)
     if member != ():
