@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import os
 import time
-import psycopg2
+import postgresql
 
 Client = commands.Bot(command_prefix='+')
 
