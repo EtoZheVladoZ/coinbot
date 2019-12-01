@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import os
 import time
+import psycopg2
 
 Client = commands.Bot(command_prefix='+')
 
@@ -25,6 +26,9 @@ async def balance(ctx, * member: discord.User):
             emb.add_field(name="Баланс:", value=f"{d[str(ctx.message.author.id)]}")
             await channel.send(embed=emb)
         else:
+            with postgresql.open("postgres://qilqawgvruvivu:d7efd1ee5c69f489874c1efb789b0e0b114f3293f57ce22edc27f78b5b0ac73d@ec2-54-75-238-138.eu-west-1.compute.amazonaws.com:5432/d69dpt8csor7o6", 'w') as f:
+                for key, value in d.items():
+                    f.write("{} {}\n".format(key,value))
             emb = discord.Embed(title=f"{ctx.message.author.name}", colour=0x2ecc71, icon_url=f"{ctx.message.author.avatar_url}")
             emb.add_field(name="Баланс:", value="0")
             await channel.send(embed=emb)
